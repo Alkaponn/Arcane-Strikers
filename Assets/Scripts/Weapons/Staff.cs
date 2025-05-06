@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class Staff : MonoBehaviour
+public abstract class Staff : MonoBehaviour
 {
-    [SerializeField] GameObject staffBulletPrefab;
-    [SerializeField] Camera mainCamera;
-    [SerializeField] Vector2 bulletOffsetFromStaff;
-    [SerializeField] float bulletCooldown;
-    [SerializeField] float bulletSpeed;
-    [SerializeField] float bulletLifetime;
+    [SerializeField] protected GameObject staffBulletPrefab;
+    [SerializeField] protected Vector2 bulletOffsetFromStaff;
+    [SerializeField] protected float bulletCooldown;
+    [SerializeField] protected float bulletSpeed;
+    [SerializeField] protected float bulletLifetime;
 
-    private float bulletTimer;
+    protected float bulletTimer;
+    protected Vector2 targetPosition;
 
-    void Start()
+    protected virtual void Start()
     {
         bulletTimer = 0f;
     }
@@ -20,23 +20,21 @@ public class Staff : MonoBehaviour
     {
         if (bulletTimer >= bulletCooldown) {
             bulletTimer = 0f;
-            Shoot();
+            CalculateTargetPosition();
+            GameObject bullet = SpawnBullet();
+            Shoot(bullet);
         }
         else {
             bulletTimer += Time.deltaTime;
         }
     }
 
-    void Shoot() {
+    GameObject SpawnBullet() {
         Vector2 bulletSpawnPosition = new Vector2(transform.position.x, transform.position.y) + bulletOffsetFromStaff;
-        GameObject staffBullet = Instantiate(staffBulletPrefab, bulletSpawnPosition, Quaternion.identity, transform);
-
-        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 bulletDirection = ((Vector2)mousePos - bulletSpawnPosition).normalized;
-        Vector2 bulletVelocity = bulletSpeed * bulletDirection;
-        Rigidbody2D staffBulletRb = staffBullet.GetComponent<Rigidbody2D>();
-        staffBulletRb.linearVelocity = bulletVelocity;
-        
-        Destroy(staffBullet, bulletLifetime);
+        return Instantiate(staffBulletPrefab, bulletSpawnPosition, Quaternion.identity, transform);
     }
+
+    protected abstract void CalculateTargetPosition();
+
+    protected abstract void Shoot(GameObject bullet);
 }

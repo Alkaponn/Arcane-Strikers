@@ -1,37 +1,40 @@
 fileFormatVersion: 2
-guid: 675d7e7b99e664445be1ea1f14a1eac4
+guid: 08874189387b48841b0b607df8311d18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7440546752563858597
-    second: staffs_0
+      213: -9062028261070243555
+    second: staffs_and_bullets_0
   - first:
-      213: -7461390936705696379
-    second: staffs_1
+      213: -6089654194273306049
+    second: staffs_and_bullets_1
   - first:
-      213: 3132286685215639721
-    second: staffs_2
+      213: 6230449214892701235
+    second: staffs_and_bullets_2
   - first:
-      213: -1000418288336766727
-    second: staffs_3
+      213: -1555080477181804267
+    second: staffs_and_bullets_3
   - first:
-      213: 175385020425189468
-    second: staffs_4
+      213: -8367267734315009482
+    second: staffs_and_bullets_4
   - first:
-      213: 2850489348650054323
-    second: staffs_5
+      213: -4416122754160213201
+    second: staffs_and_bullets_5
   - first:
-      213: -3220147537453589037
-    second: staffs_6
+      213: 3645483541694117263
+    second: staffs_and_bullets_6
   - first:
-      213: 5451518032225949699
-    second: staffs_7
+      213: -4431050028900880216
+    second: staffs_and_bullets_7
   - first:
-      213: -5069416660541559558
-    second: staffs_8
+      213: 4854598846816358099
+    second: staffs_and_bullets_8
   - first:
-      213: -8015108363999751706
-    second: staffs_9
+      213: -6880535956722869638
+    second: staffs_and_bullets_9
+  - first:
+      213: -8866564854924695901
+    second: staffs_and_bullets_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -153,7 +156,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: staffs_0
+      name: staffs_and_bullets_0
       rect:
         serializedVersion: 2
         x: 69
@@ -168,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b53beb6762eddb890800000000000000
-      internalID: -7440546752563858597
+      spriteID: d197b5a2f453d3280800000000000000
+      internalID: -9062028261070243555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_1
+      name: staffs_and_bullets_1
       rect:
         serializedVersion: 2
         x: 84
@@ -190,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58d7657a970d37890800000000000000
-      internalID: -7461390936705696379
+      spriteID: f3a3f5156c33d7ba0800000000000000
+      internalID: -6089654194273306049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_2
+      name: staffs_and_bullets_2
       rect:
         serializedVersion: 2
         x: 99
@@ -212,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a8c6f6052e187b20800000000000000
-      internalID: 3132286685215639721
+      spriteID: 3367ac4fc80077650800000000000000
+      internalID: 6230449214892701235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_3
+      name: staffs_and_bullets_3
       rect:
         serializedVersion: 2
         x: 114
@@ -234,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f8f1e00edccd12f0800000000000000
-      internalID: -1000418288336766727
+      spriteID: 5110f609b8e3b6ae0800000000000000
+      internalID: -1555080477181804267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_4
+      name: staffs_and_bullets_4
       rect:
         serializedVersion: 2
         x: 129
@@ -256,14 +259,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c583e513fb71f6200800000000000000
-      internalID: 175385020425189468
+      spriteID: 63af09bc35e71eb80800000000000000
+      internalID: -8367267734315009482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_5
+      name: staffs_and_bullets_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23c2c1b0c7c6b2c0800000000000000
+      internalID: -4416122754160213201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_and_bullets_6
       rect:
         serializedVersion: 2
         x: 67
@@ -278,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b23256c5f8fe8720800000000000000
-      internalID: 2850489348650054323
+      spriteID: f85f53177fb579230800000000000000
+      internalID: 3645483541694117263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_6
+      name: staffs_and_bullets_7
       rect:
         serializedVersion: 2
         x: 82
@@ -300,14 +325,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3dddab130ecbf43d0800000000000000
-      internalID: -3220147537453589037
+      spriteID: 8a0f065b97fb182c0800000000000000
+      internalID: -4431050028900880216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_7
+      name: staffs_and_bullets_8
       rect:
         serializedVersion: 2
         x: 97
@@ -322,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 308d67554cea7ab40800000000000000
-      internalID: 5451518032225949699
+      spriteID: 3de828f2eeffe5340800000000000000
+      internalID: 4854598846816358099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_8
+      name: staffs_and_bullets_9
       rect:
         serializedVersion: 2
         x: 112
@@ -344,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afc29f9f760d5a9b0800000000000000
-      internalID: -5069416660541559558
+      spriteID: a7a1b33800d6380a0800000000000000
+      internalID: -6880535956722869638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staffs_9
+      name: staffs_and_bullets_10
       rect:
         serializedVersion: 2
         x: 127
@@ -366,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e15887a86d94c090800000000000000
-      internalID: -8015108363999751706
+      spriteID: 3a62044dd32a3f480800000000000000
+      internalID: -8866564854924695901
       vertices: []
       indices: 
       edges: []
@@ -386,16 +411,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      staffs_0: -7440546752563858597
-      staffs_1: -7461390936705696379
-      staffs_2: 3132286685215639721
-      staffs_3: -1000418288336766727
-      staffs_4: 175385020425189468
-      staffs_5: 2850489348650054323
-      staffs_6: -3220147537453589037
-      staffs_7: 5451518032225949699
-      staffs_8: -5069416660541559558
-      staffs_9: -8015108363999751706
+      staffs_and_bullets_0: -9062028261070243555
+      staffs_and_bullets_1: -6089654194273306049
+      staffs_and_bullets_10: -8866564854924695901
+      staffs_and_bullets_2: 6230449214892701235
+      staffs_and_bullets_3: -1555080477181804267
+      staffs_and_bullets_4: -8367267734315009482
+      staffs_and_bullets_5: -4416122754160213201
+      staffs_and_bullets_6: 3645483541694117263
+      staffs_and_bullets_7: -4431050028900880216
+      staffs_and_bullets_8: 4854598846816358099
+      staffs_and_bullets_9: -6880535956722869638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

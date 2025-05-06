@@ -26,6 +26,11 @@ public class Bullet : MonoBehaviour
 
         if (health != null) {
             health.TakeDamage(damage);
+            ApplyAfterHitEffect();
         }
+    }
+
+    void ApplyAfterHitEffect() {
+        Destroy(gameObject);
     }
 }
