@@ -26,4 +26,12 @@ public class Health : MonoBehaviour
         currentHealthPoint -= damage;
         currentHealthPoint = (currentHealthPoint < 0) ? 0 : currentHealthPoint;
     }
+
+    public float GetMaxHealthPoint() {
+        return maxHealthPoint;
+    }
+
+    public float GetCurrentHealthPoint() {
+        return currentHealthPoint;
+    }
 }

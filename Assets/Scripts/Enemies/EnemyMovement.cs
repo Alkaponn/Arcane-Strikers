@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         playerEnemyRange = GameObject.FindGameObjectWithTag("Player").transform.Find("EnemyRange").GetComponent<CircleCollider2D>();
         playerStepBackRange = GameObject.FindGameObjectWithTag("Player").transform.Find("StepBackRange").GetComponent<CircleCollider2D>();
 
-        FollowPlayer();
+        MoveRandomly();
         RandomizeMovementDirection();
         randomMovementTimer = 0f;
         outOfEnemyRangeTimer = 0f;
