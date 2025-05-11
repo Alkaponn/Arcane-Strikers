@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        timerText = transform.Find("Value").GetComponent<TextMeshProUGUI>();
+        timerText = transform.Find("ValuePart").Find("ValueText").GetComponent<TextMeshProUGUI>();
         elapsedTime = 0f;
         timerTextFormat = "{0:00}:{1:00}:{2:00}";
     }
@@ -51,4 +51,8 @@ public class Timer : MonoBehaviour
     int GetSecondsPart() {
         return ((int) Math.Floor(elapsedTime)) % 60;
     }    
+
+    public string GetTime() {
+        return timerText.text;
+    }
 }

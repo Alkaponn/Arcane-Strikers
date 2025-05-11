@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        scoreText = transform.Find("Value").GetComponent<TextMeshProUGUI>();
+        scoreText = transform.Find("ValuePart").Find("ValueText").GetComponent<TextMeshProUGUI>();
         scoreTextFormat = "{0:00000}";
         score = 0;
     }
@@ -26,5 +26,9 @@ public class Score : MonoBehaviour
 
     public void AddScore(int value) {
         score += value;
+    }
+
+    public string GetScore() {
+        return scoreText.text;
     }
 }

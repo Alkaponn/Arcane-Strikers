@@ -40,4 +40,12 @@ public class ScoreManager : MonoBehaviour
 
         score.AddScore(gainedScore);
     }
+
+    public string GetTime() {
+        return timer.GetTime();
+    }
+
+    public string GetScore() {
+        return score.GetScore();
+    }
 }
