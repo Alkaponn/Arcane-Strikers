@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public event Action OnSecondPassed;
+
     private TextMeshProUGUI timerText;
+    private string timerTextFormat;
     private float elapsedTime;
-    private String timerTextFormat;
+    private int hours;
+    private int minutes;
+    private int seconds;
 
     void Start()
     {
@@ -18,13 +23,20 @@ public class Timer : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
+        NotifyOnSecondPassed();
         SetTimerText();
     }
 
+    void NotifyOnSecondPassed() {
+        if (seconds != GetSecondsPart()) {
+            OnSecondPassed?.Invoke();
+        }
+    }
+
     void SetTimerText() {
-        int hours = GetHoursPart();
-        int minutes = GetMinutesPart();
-        int seconds = GetSecondsPart();
+        hours = GetHoursPart();
+        minutes = GetMinutesPart();
+        seconds = GetSecondsPart();
         timerText.text = string.Format(timerTextFormat, hours, minutes, seconds);
     }
 
