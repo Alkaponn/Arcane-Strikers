@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
     [SerializeField] float maxHealthPoint;
 
@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     void Update()
     {
         if (IsDead()) {
-            Destroy(gameObject);
+            ApplyAfterDeathEffect();
         }
     }
 
@@ -34,4 +34,6 @@ public class Health : MonoBehaviour
     public float GetCurrentHealthPoint() {
         return currentHealthPoint;
     }
+
+    protected abstract void ApplyAfterDeathEffect();
 }

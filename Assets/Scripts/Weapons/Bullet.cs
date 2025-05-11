@@ -4,20 +4,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float damage;
-    
-    private string ownerTag;
-
-    void Start()
-    {
-        ownerTag = transform.parent.parent.tag;
-    }
+    [SerializeField] string targetTag;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject target = collision.gameObject;
+        GameObject hitObject = collision.gameObject;
 
-        if (!target.CompareTag(ownerTag)) {
-            DealDamage(target);
+        if (hitObject.CompareTag(targetTag)) {
+            DealDamage(hitObject);
         }
     }
 

@@ -8,9 +8,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float outOfEnemyRangeCooldown;
     [SerializeField] float stepBackRangeCooldown;
 
-    private Transform playerTransform;
     private Rigidbody2D rb;
-    private CircleCollider2D playerEnemyRange;
+    private Transform playerTransform;
+    private CapsuleCollider2D playerEnemyRange;
     private CircleCollider2D playerStepBackRange;
     private Vector2 randomMovementDirection;
     private float randomMovementTimer;
@@ -19,10 +19,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
-        playerEnemyRange = GameObject.FindGameObjectWithTag("Player").transform.Find("EnemyRange").GetComponent<CircleCollider2D>();
-        playerStepBackRange = GameObject.FindGameObjectWithTag("Player").transform.Find("StepBackRange").GetComponent<CircleCollider2D>();
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerEnemyRange = playerTransform.Find("EnemyRange").GetComponent<CapsuleCollider2D>();
+        playerStepBackRange = playerTransform.Find("StepBackRange").GetComponent<CircleCollider2D>();
 
         MoveRandomly();
         RandomizeMovementDirection();
@@ -68,10 +69,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     bool IsInPlayerEnemyRange() {
-        float playerEnemyRangeRadius = playerEnemyRange.radius;
-        float distance = GetDistanceBetweenPlayer().magnitude;
-
-        return distance < playerEnemyRangeRadius;
+        return playerEnemyRange.OverlapPoint(transform.position);
     }
 
     bool IsInPlayerStepBackRange() {

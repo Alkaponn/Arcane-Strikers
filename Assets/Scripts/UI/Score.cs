@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] int scorePerSecond;
-
     private TextMeshProUGUI scoreText;
     private string scoreTextFormat;
     private int score;
@@ -26,7 +24,7 @@ public class Score : MonoBehaviour
         scoreText.text = string.Format(scoreTextFormat, score);
     }
 
-    public void AddScoreOnSecondPassed() {
-        score += scorePerSecond;
+    public void AddScore(int value) {
+        score += value;
     }
 }

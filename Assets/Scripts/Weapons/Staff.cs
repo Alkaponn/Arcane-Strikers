@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Staff : MonoBehaviour
 {
+    [SerializeField] GameObject bulletsParent;
     [SerializeField] protected GameObject staffBulletPrefab;
     [SerializeField] protected Vector2 bulletOffsetFromStaff;
     [SerializeField] protected float bulletCooldown;
@@ -31,7 +32,7 @@ public abstract class Staff : MonoBehaviour
 
     GameObject SpawnBullet() {
         Vector2 bulletSpawnPosition = new Vector2(transform.position.x, transform.position.y) + bulletOffsetFromStaff;
-        return Instantiate(staffBulletPrefab, bulletSpawnPosition, Quaternion.identity, transform);
+        return Instantiate(staffBulletPrefab, bulletSpawnPosition, Quaternion.identity, bulletsParent.transform);
     }
 
     protected abstract void CalculateTargetPosition();
