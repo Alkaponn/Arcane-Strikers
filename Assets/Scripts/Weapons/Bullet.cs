@@ -22,11 +22,11 @@ public class Bullet : MonoBehaviour
 
         if (health != null) {
             health.TakeDamage(damage);
-            ApplyAfterHitEffect();
+            ApplyAfterHitEffect(target);
         }
     }
 
-    protected virtual void ApplyAfterHitEffect() {
+    protected virtual void ApplyAfterHitEffect(GameObject target) {
         Destroy(gameObject);
     }
 }

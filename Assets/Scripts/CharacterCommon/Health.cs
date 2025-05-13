@@ -10,14 +10,7 @@ public abstract class Health : MonoBehaviour
     {
         currentHealthPoint = maxHealthPoint;
     }
-
-    void Update()
-    {
-        if (IsDead()) {
-            ApplyAfterDeathEffect();
-        }
-    }
-
+    
     bool IsDead() {
         return currentHealthPoint <= 0;
     }
@@ -25,6 +18,10 @@ public abstract class Health : MonoBehaviour
     public void TakeDamage(float damage) {
         currentHealthPoint -= damage;
         currentHealthPoint = (currentHealthPoint < 0) ? 0 : currentHealthPoint;
+
+        if (IsDead()) {
+            ApplyAfterDeathEffect();
+        }
     }
 
     public float GetMaxHealthPoint() {

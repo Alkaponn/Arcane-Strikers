@@ -19,7 +19,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] List<int> waveEnemyCountSequence;
 
     private float waveTimer;
-    private List<GameObject> enemiesInWave;
+    public List<GameObject> enemiesInWave;
     private int waveTypeSequenceIndex;
     private int waveEnemyCountSequenceIndex;
     private float bulletRateFactor;
