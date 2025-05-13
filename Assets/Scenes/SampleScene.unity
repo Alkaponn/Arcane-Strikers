@@ -2512,6 +2512,7 @@ MonoBehaviour:
   skullBossPrefab: {fileID: 7517209182210879414, guid: 62410c8b19c0bd6418c722ca6b365562, type: 3}
   golemBossPrefab: {fileID: 2180242271722687142, guid: 65af6ffccce7ae34199815f4c58c123f, type: 3}
   secondsBetweenWaves: 2
+  secondsBetweenSpawns: 0.5
   bulletRateIncreasePercentage: 20
   spawnAreaTopRight: {x: 25, y: 4}
   spawnAreaBottomLeft: {x: -7, y: -12}
@@ -15214,7 +15215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7366135038945733071, guid: 3a51be3ace43a5c40a15260277d90914, type: 3}
       propertyPath: bulletCooldown
-      value: 0.01
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

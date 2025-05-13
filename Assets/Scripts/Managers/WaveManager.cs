@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject skullBossPrefab;
     [SerializeField] GameObject golemBossPrefab;
     [SerializeField] float secondsBetweenWaves;
+    [SerializeField] float secondsBetweenSpawns;
     [SerializeField] float bulletRateIncreasePercentage;
     [SerializeField] Vector2 spawnAreaTopRight;
     [SerializeField] Vector2 spawnAreaBottomLeft;
@@ -53,7 +55,6 @@ public class WaveManager : MonoBehaviour
         EnemyType waveType = waveTypeSequence[waveTypeSequenceIndex];
         int enemyCount = waveEnemyCountSequence[waveEnemyCountSequenceIndex];
         GameObject enemyPrefab;
-        print(waveTypeSequenceIndex);
 
         switch (waveType) {
             case EnemyType.BAT:
@@ -79,12 +80,13 @@ public class WaveManager : MonoBehaviour
                 break;
         }
 
-        SpawnEnemies(enemyCount, enemyPrefab);
+        StartCoroutine(SpawnEnemies(enemyCount, enemyPrefab));
     }
 
-    void SpawnEnemies(int count, GameObject enemyPrefab) {
+    IEnumerator SpawnEnemies(int count, GameObject enemyPrefab) {
         for (int i = 0; i < count; i++) {
             Vector2 spawnPosition = GetRandomSpawnPosition();
+            yield return new WaitForSeconds(secondsBetweenSpawns);
             GameObject enemyGameObject = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             enemyGameObject.GetComponentInChildren<EnemyStaff>().DivideBulletCooldownByFactor(bulletRateFactor);
             enemiesInWave.Add(enemyGameObject);
