@@ -1,10 +1,12 @@
-using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float damage;
+    [SerializeField] public float damage;
+    [SerializeField] public float bulletSpeed;
     [SerializeField] string targetTag;
+
+    public GameObject bulletPrefab;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,7 +26,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void ApplyAfterHitEffect() {
+    protected virtual void ApplyAfterHitEffect() {
         Destroy(gameObject);
     }
 }

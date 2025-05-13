@@ -103,7 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  bulletSpeed: 20
   targetTag: Player
+  bulletPrefab: {fileID: 4794791961739150380}
 --- !u!50 &4961650206891610281
 Rigidbody2D:
   serializedVersion: 5
