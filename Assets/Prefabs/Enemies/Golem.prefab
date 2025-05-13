@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4103125042052605212}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.080017, y: -2.960022, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f0a0974e099644e8c9feec0aee01ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staffBulletPrefab: {fileID: 2158616952473553880, guid: 0bfd069c3692afd4384767ff2d0cf633, type: 3}
+  staffBulletPrefab: {fileID: 4794791961739150380, guid: 0bfd069c3692afd4384767ff2d0cf633, type: 3}
   bulletOffsetFromStaff: {x: 0, y: 1}
-  bulletCooldown: 1
+  bulletCooldown: 2
   bulletSpeed: 20
   bulletLifetime: 2
   maxDeviation: 1
@@ -155,8 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee42fdbc5d64edb4fbbd40d1546e1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 10
-  enemyManager: {fileID: 0}
+  maxHealthPoint: 8
 --- !u!114 &5218150046853064649
 MonoBehaviour:
   m_ObjectHideFlags: 0

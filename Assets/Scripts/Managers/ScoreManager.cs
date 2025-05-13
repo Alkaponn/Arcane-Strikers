@@ -4,7 +4,6 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] Timer timer;
     [SerializeField] Score score;
-    [SerializeField] EnemyManager enemyManager;
     [SerializeField] int scorePerSecond;
     [SerializeField] int scorePerBat;
     [SerializeField] int scorePerSkull;
@@ -13,14 +12,15 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         timer.OnSecondPassed += AddScoreOnSecondPassed;
-        enemyManager.OnEnemyDeath += AddScoreOnEnemyDeath;
     }
 
     public void AddScoreOnSecondPassed() {
         score.AddScore(scorePerSecond);
     }
 
-    public void AddScoreOnEnemyDeath(EnemyType enemyType) {
+    public void AddScoreOnEnemyDeath(GameObject enemy) {
+        EnemyType enemyType = enemy.GetComponent<EnemyTypeContainer>().enemyType;
+
         int gainedScore = 0;
 
         switch (enemyType) {

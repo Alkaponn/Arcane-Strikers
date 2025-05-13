@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - HUD
+  - BulletsParent
+  - ScoreManager
+  - EnemiesParent
   layers:
   - Default
   - TransparentFX

@@ -2,8 +2,11 @@ using UnityEngine;
 
 public enum EnemyType {
     BAT,
+    BATBOSS,
     SKULL,
-    GOLEM
+    SKULLBOSS,
+    GOLEM,
+    GOLEMBOSS
 };
 
 public class EnemyTypeContainer : MonoBehaviour
