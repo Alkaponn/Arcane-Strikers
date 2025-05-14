@@ -20,7 +20,7 @@ public class DeathScreen : MonoBehaviour
     public void Display(string timeTextValue, string scoreTextValue) {
         deathScreenAnimator.SetTrigger("deathTrigger");
         quitToMenuButton.interactable = true;
-        timerText.text = timeTextValue;
-        scoreText.text = scoreTextValue;
+        timerText.text = string.Format("Survival Time: {0}", timeTextValue);
+        scoreText.text = string.Format("Final Score: {0}", scoreTextValue);
     }
 }

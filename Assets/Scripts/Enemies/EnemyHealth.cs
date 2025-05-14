@@ -7,14 +7,17 @@ public class EnemyHealth : Health
 
     private ScoreManager scoreManager;
     private WaveManager waveManager;
+    private DropManager dropManager;
 
     void Start()
     {
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         waveManager = GameObject.FindGameObjectWithTag("EnemiesParent").GetComponent<WaveManager>();
+        dropManager = GameObject.FindGameObjectWithTag("DropManager").GetComponent<DropManager>();
 
         OnEnemyDeath += scoreManager.AddScoreOnEnemyDeath;
         OnEnemyDeath += waveManager.RemoveEnemyFromWaveOnDeath;
+        OnEnemyDeath += dropManager.Drop;
     }
 
     protected override void ApplyAfterDeathEffect()
