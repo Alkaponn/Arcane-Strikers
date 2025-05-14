@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightningStaffBullet : Bullet
 {
     [SerializeField] public int maxHops;
+    [SerializeField] float bulletSpeedBoost;
 
     private GameObject bulletsParent;
     private WaveManager waveManager;
@@ -24,7 +25,7 @@ public class LightningStaffBullet : Bullet
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity, bulletsParent.transform);
             bullet.GetComponent<LightningStaffBullet>().maxHops--;
             Rigidbody2D bulletRb= bullet.GetComponent<Rigidbody2D>();
-            bulletRb.linearVelocity = bulletSpeed * velocityUnitVector;
+            bulletRb.linearVelocity = bulletSpeedBoost * bulletSpeed * velocityUnitVector;
         }
 
         base.ApplyAfterHitEffect(target);

@@ -25,7 +25,7 @@ public class WaterStaffBullet : Bullet
                 GameObject splashBullet = Instantiate(bulletPrefab, splashPosition, Quaternion.identity, bulletsParent.transform);
                 Rigidbody2D splashBulletRb = splashBullet.GetComponent<Rigidbody2D>();
                 splashBulletRb.linearVelocity = bulletSpeed * velocityUnitVector;
-                splashBullet.GetComponent<WaterStaffBullet>().damage /= splashCount;
+                splashBullet.GetComponent<WaterStaffBullet>().damage /= 2;
                 splashBullet.GetComponent<WaterStaffBullet>().isSplash = true;
                 splashBullet.transform.localScale /= 2;
 

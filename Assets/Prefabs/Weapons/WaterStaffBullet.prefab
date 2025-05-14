@@ -170,6 +170,6 @@ MonoBehaviour:
   targetTag: Enemy
   bulletPrefab: {fileID: 4616202596267291171}
   splashCount: 8
-  splashLifeTime: 0.25
+  splashLifeTime: 2
   splashRadius: 1
   isSplash: 0

@@ -168,4 +168,4 @@ MonoBehaviour:
   damage: 4
   bulletSpeed: 20
   targetTag: Enemy
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 438418357321483313}

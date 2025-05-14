@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee42fdbc5d64edb4fbbd40d1546e1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 4
+  maxHealthPoint: 10
 --- !u!114 &4735932455681806782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staffBulletPrefab: {fileID: 4794791961739150380, guid: 0bfd069c3692afd4384767ff2d0cf633, type: 3}
   bulletOffsetFromStaff: {x: 0, y: 1}
-  bulletCooldown: 2
-  bulletSpeed: 20
+  bulletCooldown: 1
   bulletLifetime: 2
   maxDeviation: 1

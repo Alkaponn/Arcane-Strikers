@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  bulletSpeed: 60
+  bulletSpeed: 20
   targetTag: Enemy
   bulletPrefab: {fileID: 2979860826404707017}
   maxHops: 3
+  bulletSpeedBoost: 3
