@@ -9,6 +9,8 @@ TagManager:
   - BulletsParent
   - ScoreManager
   - EnemiesParent
+  - Staff
+  - DropManager
   layers:
   - Default
   - TransparentFX
@@ -48,6 +50,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 197319135
+    locked: 0
+  - name: Drop
+    uniqueID: 390674187
     locked: 0
   - name: Character
     uniqueID: 4143290957

@@ -28,4 +28,9 @@ public class ArcaneStaff : DefaultStaff
 
         return bullet.GetComponent<Bullet>().bulletSpeed * bulletVelocity;
     }
+
+    void OnDestroy()
+    {
+        Destroy(arcaneBullet);
+    }
 }
