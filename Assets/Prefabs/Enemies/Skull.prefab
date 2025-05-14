@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9192073495257975772}
   - component: {fileID: 845293837662183112}
   - component: {fileID: 2191801782541148442}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skull
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee42fdbc5d64edb4fbbd40d1546e1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 15
+  maxHealthPoint: 10
   deathDelay: 1
 --- !u!114 &845293837662183112
 MonoBehaviour:

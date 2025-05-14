@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4191802233774892519}
   - component: {fileID: 7753202940993629065}
   - component: {fileID: 1020311315891224757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GolemBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee42fdbc5d64edb4fbbd40d1546e1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 200
+  maxHealthPoint: 150
   deathDelay: 1
 --- !u!114 &3366651391158902288
 MonoBehaviour:

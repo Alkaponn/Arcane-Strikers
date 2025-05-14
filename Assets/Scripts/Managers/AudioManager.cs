@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayDropSound(GameObject staffPrefab) {
-        audioSource.PlayOneShot(dropSound, 0.1f);
+        audioSource.PlayOneShot(dropSound, 0.5f);
     }
 
     public void PlayDefaultSound() {
