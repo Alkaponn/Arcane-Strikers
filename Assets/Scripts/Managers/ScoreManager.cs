@@ -45,7 +45,11 @@ public class ScoreManager : MonoBehaviour
         return timer.GetTime();
     }
 
-    public string GetScore() {
+    public string GetScoreText() {
+        return score.GetScoreText();
+    }
+
+    public int GetScore() {
         return score.GetScore();
     }
 }

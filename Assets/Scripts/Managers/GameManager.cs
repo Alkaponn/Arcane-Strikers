@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
 
     void PlayerAfterDeathEffects() {
         deathScreen.gameObject.SetActive(true);
-        deathScreen.Display(scoreManager.GetTime(), scoreManager.GetScore());
+        deathScreen.Display(scoreManager.GetTime(), scoreManager.GetScoreText());
         hud.Disappear();
+        SaveHighScore();
         PauseGame();
     }
 
@@ -59,5 +60,16 @@ public class GameManager : MonoBehaviour
 
     public void Quit() {
         Application.Quit();
+    }
+
+    public void SaveHighScore() {
+        int score = scoreManager.GetScore();
+
+        int currentHigh = PlayerPrefs.GetInt("HighScore", 0);
+        if (score > currentHigh)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+        }
     }
 }

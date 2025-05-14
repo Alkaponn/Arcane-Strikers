@@ -32,7 +32,11 @@ public class Score : MonoBehaviour
         score += value;
     }
 
-    public string GetScore() {
+    public string GetScoreText() {
         return scoreText.text;
+    }
+
+    public int GetScore() {
+        return score;
     }
 }
