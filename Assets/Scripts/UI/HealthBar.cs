@@ -14,6 +14,10 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) {
+            return;
+        }
+        
         SetFill();
     }
 

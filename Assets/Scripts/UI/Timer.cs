@@ -22,6 +22,10 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) {
+            return;
+        }
+        
         elapsedTime += Time.deltaTime;
         NotifyOnSecondPassed();
         SetTimerText();

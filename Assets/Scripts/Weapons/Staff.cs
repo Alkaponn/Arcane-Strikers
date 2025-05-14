@@ -18,10 +18,19 @@ public abstract class Staff : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) {
+            return;
+        }
+        
+        UseStaff();
+    }
+
+    protected virtual void UseStaff() {
         if (bulletTimer >= bulletCooldown) {
             bulletTimer = 0f;
             GameObject bullet = SpawnBullet();
-            Vector2 velocity = CalculateBulletVelocity(bullet);
+            Vector2 targetPosition = CalculateTargetPosition();
+            Vector2 velocity = CalculateBulletVelocity(bullet, targetPosition);
             Shoot(bullet, velocity);
         }
         else {
@@ -29,7 +38,7 @@ public abstract class Staff : MonoBehaviour
         }
     }
 
-    GameObject SpawnBullet() {
+    protected GameObject SpawnBullet() {
         Vector2 bulletSpawnPosition = new Vector2(transform.position.x, transform.position.y) + bulletOffsetFromStaff;
         GameObject bullet = Instantiate(staffBulletPrefab, bulletSpawnPosition, Quaternion.identity, bulletsParent.transform);
         bullet.GetComponent<Bullet>().bulletPrefab = staffBulletPrefab;
@@ -40,8 +49,7 @@ public abstract class Staff : MonoBehaviour
         bulletCooldown /= factor;
     }
 
-    Vector2 CalculateBulletVelocity(GameObject bullet){
-        Vector2 targetPosition = CalculateTargetPosition();
+    protected virtual Vector2 CalculateBulletVelocity(GameObject bullet, Vector2 targetPosition){
         Vector2 bulletDirection = (targetPosition - (Vector2) bullet.transform.position).normalized;
         Vector2 bulletVelocity = bullet.GetComponent<Bullet>().bulletSpeed * bulletDirection;
 
