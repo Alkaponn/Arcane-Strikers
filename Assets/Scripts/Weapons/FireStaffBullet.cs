@@ -2,5 +2,7 @@ using UnityEngine;
 
 public class FireStaffBullet : Bullet
 {
-    protected override void ApplyAfterHitEffect(GameObject target) {}
+    protected override void ApplyAfterHitEffect(GameObject target) {
+        audioManager.PlayFireSound();
+    }
 }

@@ -8,12 +8,15 @@ public class StaffDrop : MonoBehaviour
     public event Action<GameObject> OnDropReceive;
 
     private DropManager dropManager;
+    private AudioManager audioManager;
 
     void Start()
     {
         dropManager = GameObject.FindGameObjectWithTag("DropManager").GetComponent<DropManager>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
         OnDropReceive += dropManager.OnDropReceiveAction;
+        OnDropReceive += audioManager.PlayDropSound;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

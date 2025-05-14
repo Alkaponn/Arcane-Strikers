@@ -3,5 +3,7 @@ using System;
 
 public class ArcaneStaffBullet : Bullet
 {
-    protected override void ApplyAfterHitEffect(GameObject target) {}
+    protected override void ApplyAfterHitEffect(GameObject target) {
+        audioManager.PlayArcaneSound();
+    }
 }

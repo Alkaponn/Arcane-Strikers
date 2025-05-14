@@ -8,6 +8,13 @@ public class Bullet : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    protected AudioManager audioManager;
+
+    protected virtual void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject hitObject = collision.gameObject;
@@ -27,6 +34,13 @@ public class Bullet : MonoBehaviour
     }
 
     protected virtual void ApplyAfterHitEffect(GameObject target) {
+        if (targetTag.Equals("Enemy")) {
+            audioManager.PlayDefaultSound();
+        }
+        else {
+            audioManager.PlayEnemySound();
+        }
+
         Destroy(gameObject);
     }
 }

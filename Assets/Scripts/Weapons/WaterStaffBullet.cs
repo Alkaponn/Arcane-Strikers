@@ -11,14 +11,17 @@ public class WaterStaffBullet : Bullet
 
     private GameObject bulletsParent;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         bulletsParent = GameObject.FindGameObjectWithTag("BulletsParent");
     }
 
     protected override void ApplyAfterHitEffect(GameObject target)
     {
         if (!isSplash) {
+            audioManager.PlayWaterSound();
+
             for (int i = 0; i < splashCount; i++) {
                 Vector2 velocityUnitVector = new Vector2((float) Math.Cos(i * (Math.PI / 4)), (float) Math.Sin(i * (Math.PI / 4))); 
                 Vector2 splashPosition = (Vector2) transform.position + (splashRadius * velocityUnitVector);
@@ -33,6 +36,6 @@ public class WaterStaffBullet : Bullet
             }
         }
 
-        base.ApplyAfterHitEffect(target);
+        Destroy(gameObject);
     }
 }

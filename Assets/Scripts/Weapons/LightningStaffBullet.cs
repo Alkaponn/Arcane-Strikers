@@ -10,14 +10,17 @@ public class LightningStaffBullet : Bullet
     private GameObject bulletsParent;
     private WaveManager waveManager;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         bulletsParent = GameObject.FindGameObjectWithTag("BulletsParent");
         waveManager = GameObject.FindGameObjectWithTag("EnemiesParent").GetComponent<WaveManager>();
     }
 
     protected override void ApplyAfterHitEffect(GameObject target)
     {
+        audioManager.PlayLightningSound();
+
         if (maxHops > 0) {
             Vector2 closestEnemyPosition = GetClosestEnemyPosition(target);
             Vector2 velocityUnitVector = (closestEnemyPosition - (Vector2) transform.position).normalized;
@@ -28,7 +31,7 @@ public class LightningStaffBullet : Bullet
             bulletRb.linearVelocity = bulletSpeedBoost * bulletSpeed * velocityUnitVector;
         }
 
-        base.ApplyAfterHitEffect(target);
+        Destroy(gameObject);
     }
 
     Vector2 GetClosestEnemyPosition(GameObject target) {
