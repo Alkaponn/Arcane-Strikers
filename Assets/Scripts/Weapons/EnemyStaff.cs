@@ -4,12 +4,14 @@ public class EnemyStaff : Staff
 {
     [SerializeField] float maxDeviation;
 
+    private Animator animator;
     private GameObject player;
 
     protected override void Start()
     {
         base.Start();
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponentInParent<Animator>();
     }
 
     protected override Vector2 CalculateTargetPosition() {
@@ -21,5 +23,11 @@ public class EnemyStaff : Staff
         Vector2 targetPosition = (Vector2) (playerPosition + deviation * deviationUnitVector);
 
         return targetPosition;
+    }
+
+    protected override void Shoot(GameObject bullet, Vector2 velocity)
+    {
+        animator.SetTrigger("attack");
+        base.Shoot(bullet, velocity);
     }
 }

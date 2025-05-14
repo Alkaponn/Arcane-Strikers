@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     private float randomMovementTimer;
     private float outOfEnemyRangeTimer;
     private float stepBackRangeTimer;
+    private bool isFrozen;
 
     void Start()
     {
@@ -30,11 +32,14 @@ public class EnemyMovement : MonoBehaviour
         randomMovementTimer = 0f;
         outOfEnemyRangeTimer = 0f;
         stepBackRangeTimer = 0f;
+        isFrozen = false;
     }
 
     void Update()
     {
-        Move();
+        if (!isFrozen) {
+            Move();
+        }
     }
 
     void Move() {
@@ -82,10 +87,12 @@ public class EnemyMovement : MonoBehaviour
     void MoveRandomly() {
         RandomizeMovementDirection();
         rb.linearVelocity = randomMovementSpeed * randomMovementDirection;
+
+        Flip(rb.linearVelocity);
     }
 
     void RandomizeMovementDirection() {
-        float angle = Random.Range(0f, 360f);
+        float angle = UnityEngine.Random.Range(0f, 360f);
         randomMovementDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized;
     }
 
@@ -93,9 +100,20 @@ public class EnemyMovement : MonoBehaviour
         Vector2 distanceVector = playerTransform.position - transform.position;
         Vector2 velocity = movementSpeed * distanceVector.normalized;
         rb.linearVelocity = velocity;
+
+        Flip(rb.linearVelocity);
     }
 
     Vector2 GetDistanceBetweenPlayer() {
         return playerTransform.position - transform.position;
+    }
+
+    void Flip(Vector2 velocity) {
+        int sign = (Math.Sign(velocity.x) == 0) ? Math.Sign(transform.localScale.x) : Math.Sign(velocity.x);
+        transform.localScale = new Vector3(sign * Math.Abs(transform.localScale.x), transform.localScale.y, 1);
+    }
+
+    public void SetIsFrozen(GameObject enemy) {
+        isFrozen = true;
     }
 }

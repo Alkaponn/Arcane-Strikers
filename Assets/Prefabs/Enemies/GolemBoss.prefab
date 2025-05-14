@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 479831849301140521}
   - component: {fileID: 4191802233774892519}
   - component: {fileID: 7753202940993629065}
+  - component: {fileID: 1020311315891224757}
   m_Layer: 0
   m_Name: GolemBoss
   m_TagString: Enemy
@@ -80,9 +81,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -151676339
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4322419577333733612, guid: 280d477e0bd21dd4b914a9b4d2b83a53, type: 3}
+  m_Sprite: {fileID: 1419619972923838527, guid: 6f9d997d180c03a4d961f6e24cbf3377, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoint: 200
+  deathDelay: 1
 --- !u!114 &3366651391158902288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +202,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &1020311315891224757
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180242271722687142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4716a0fa128ff964c956a1052c13e7e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8767181838193062881
 GameObject:
   m_ObjectHideFlags: 0

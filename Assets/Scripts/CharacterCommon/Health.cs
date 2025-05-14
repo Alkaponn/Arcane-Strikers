@@ -15,7 +15,11 @@ public abstract class Health : MonoBehaviour
         return currentHealthPoint <= 0;
     }
 
-    public void TakeDamage(float damage) {
+    public virtual void TakeDamage(float damage) {
+        if (IsDead()) {
+            return;
+        }
+
         currentHealthPoint -= damage;
         currentHealthPoint = (currentHealthPoint < 0) ? 0 : currentHealthPoint;
 

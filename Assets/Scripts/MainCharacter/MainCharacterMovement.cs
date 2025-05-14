@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,5 +26,12 @@ public class MainCharacterMovement : MonoBehaviour
     void Move() {
         Vector2 newVelocityVector = movementSpeed * moveInput;
         rb.linearVelocity = newVelocityVector;
+        
+        Flip(rb.linearVelocity);
+    }
+
+    void Flip(Vector2 velocity) {
+        int sign = (Math.Sign(velocity.x) == 0) ? Math.Sign(transform.localScale.x) : Math.Sign(velocity.x);
+        transform.localScale = new Vector3(sign * Math.Abs(transform.localScale.x), transform.localScale.y, 1);
     }
 }

@@ -19,6 +19,7 @@ public class DropManager : MonoBehaviour
     [SerializeField] float probabilityPerEnemy;
     [SerializeField] GameObject defaultStaffPrefab;
     [SerializeField] float staffDuration;
+    [SerializeField] float dropDelay;
 
     private GameObject player;
     private int numActiveDrops = 0;
@@ -52,6 +53,12 @@ public class DropManager : MonoBehaviour
     }
 
     public void Drop(GameObject enemy) {
+        StartCoroutine(DelayedDrop(enemy.transform.position));
+    }
+
+    IEnumerator DelayedDrop(Vector2 enemyPosition) {
+        yield return new WaitForSeconds(dropDelay);
+
         float rand = Random.Range(0f, 1f);
 
         if (rand <= probabilityPerEnemy) {
@@ -77,7 +84,7 @@ public class DropManager : MonoBehaviour
                     break;
             }
 
-            Instantiate(selectedPrefab, enemy.transform.position, Quaternion.identity);
+            Instantiate(selectedPrefab, enemyPosition, Quaternion.identity);
         }
     }
 }

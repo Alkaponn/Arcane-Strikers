@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4749216153406582276}
   - component: {fileID: 1927430820410353970}
   - component: {fileID: 470683729102930432}
+  - component: {fileID: 2321285055043117497}
   m_Layer: 0
   m_Name: BatBoss
   m_TagString: Enemy
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -151676339
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 2129977301182375049, guid: 34e1d665fbad62d4cbbef583923a2a63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoint: 100
+  deathDelay: 1
 --- !u!114 &3192468555392101017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +202,28 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012532233, y: 0.020886596}
   m_Size: {x: 0.5686858, y: 0.52691334}
   m_Direction: 1
+--- !u!95 &2321285055043117497
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222569887792513427}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a41cd345eeb2b5c40ab0ac02cd6e5acf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8936727317144285166
 GameObject:
   m_ObjectHideFlags: 0

@@ -4089,9 +4089,10 @@ MonoBehaviour:
   fireStaffDropPrefab: {fileID: 5462876858110022431, guid: 645efa9bc354ab54f9ee6fb5080f0483, type: 3}
   lightningStaffDropPrefab: {fileID: 7431018294904070705, guid: 4f1d50830a8fff14693d41adc8d70cca, type: 3}
   arcaneStaffDropPrefab: {fileID: 1860268736555753018, guid: ae3f15cfdfd57984cb7e4b0c689a605b, type: 3}
-  probabilityPerEnemy: 0.125
+  probabilityPerEnemy: 1
   defaultStaffPrefab: {fileID: 4179380566170583440, guid: 8b4500bfbf349474e8acf3cfd38cd8bb, type: 3}
   staffDuration: 10
+  dropDelay: 1
 --- !u!4 &1513382358
 Transform:
   m_ObjectHideFlags: 0
@@ -4461,7 +4462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35782e55f40c49478bcc5b086a72cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 1
+  maxHealthPoint: 100
 --- !u!1 &1617247007
 GameObject:
   m_ObjectHideFlags: 0

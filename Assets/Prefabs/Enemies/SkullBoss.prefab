@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 107562422603306994}
   - component: {fileID: 6215951312046217882}
   - component: {fileID: 1672700893213403466}
+  - component: {fileID: 1141856656364275916}
   m_Layer: 0
   m_Name: SkullBoss
   m_TagString: Enemy
@@ -129,7 +130,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -151676339
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -9010615838638220262, guid: e27e6767168a34e45844f562c634037b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoint: 150
+  deathDelay: 1
 --- !u!114 &1672700893213403466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,3 +251,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
+--- !u!95 &1141856656364275916
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517209182210879414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f229b2dbb9d2d14387217918b5a1c6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
